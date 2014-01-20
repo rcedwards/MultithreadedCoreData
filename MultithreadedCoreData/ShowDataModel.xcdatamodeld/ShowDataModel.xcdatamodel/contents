@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Episode" representedClassName="Episode" syncable="YES">
+        <attribute name="airDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="reminderDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="remoteObject" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="seasonNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="seriesNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="synopsis" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewed" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
+        <relationship name="season" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Season" inverseName="episodes" inverseEntity="Season" syncable="YES"/>
+        <relationship name="show" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Show" inverseName="episodes" inverseEntity="Show" syncable="YES"/>
+    </entity>
+    <entity name="Season" representedClassName="Season" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Episode" inverseName="season" inverseEntity="Episode" syncable="YES"/>
+        <relationship name="show" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Show" inverseName="seasons" inverseEntity="Show" syncable="YES"/>
+    </entity>
+    <entity name="Show" representedClassName="Show" syncable="YES">
+        <attribute name="airDay" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="airTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="airTimeZone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bannerURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="ended" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="localNotificationID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="network" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paused" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="posterURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteObject" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="runtime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="synopsis" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="episodes" optional="YES" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Episode" inverseName="show" inverseEntity="Episode" syncable="YES"/>
+        <relationship name="seasons" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Season" inverseName="show" inverseEntity="Season" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Show" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Episode" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Season" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

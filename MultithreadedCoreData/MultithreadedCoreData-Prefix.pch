@@ -1,0 +1,36 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+#import "NSManagedObject+Helpers.h"
+#import "PKBaseManagedObject.h"
+
+#define mustOverride() @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"%s must be overridden in a subclass/category", __PRETTY_FUNCTION__] userInfo:nil]
+
+#define useDesignatedInitializer() @throw [NSException exceptionWithName:NSGenericException reason:[NSString stringWithFormat:@"%s cannot be called. Use designated initializer.", __PRETTY_FUNCTION__] userInfo:nil]
+
+#endif
+
+#ifdef DEBUG
+
+#define PLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#else
+
+#define PLog(...)
+
+#endif
