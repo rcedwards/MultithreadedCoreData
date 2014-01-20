@@ -8,13 +8,15 @@
 
 #import "PKRemoteShow.h"
 
-NSString const * kShowIDKey = @"showID";
-NSString const * kShowNameKey = @"name";
+NSString * const kShowIDKey = @"showID";
+NSString * const kShowNameKey = @"name";
+NSString * const kShowEpisodesKey = @"episodes";
 
 @interface PKRemoteShow()
 
 @property (copy, nonatomic) NSString *showID;
 @property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSArray *episodes;
 
 @end
 
@@ -28,13 +30,15 @@ NSString const * kShowNameKey = @"name";
 
 - (NSDictionary *)serialize {
 	return @{kShowIDKey: self.showID,
-			 kShowNameKey: self.name};
+			 kShowNameKey: self.name,
+			 kShowEpisodesKey: self.episodes};
 }
 
 + (id<PKRemoteDataModelObjectProtocol>)deserialize:(NSDictionary *)dictionary error:(NSError *__autoreleasing *)error {
 	PKRemoteShow *remoteShow = [[PKRemoteShow alloc] init];
 	remoteShow.showID = dictionary[kShowIDKey];
 	remoteShow.name = dictionary[kShowNameKey];
+	remoteShow.episodes = dictionary[kShowEpisodesKey];
 	return remoteShow;
 }
 

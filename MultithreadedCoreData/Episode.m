@@ -27,6 +27,13 @@
 @dynamic identifier;
 
 + (NSDictionary *)propertyKeyMappingDictionary {
+	/* Smaller Sample Version */
+	return @{@"title": @"name",
+			 @"episodeID" : @"identifier",
+			 @"airedDate" : @"airDate",
+			 @"episodeNumber" : @"seasonNumber"};
+	
+	/* Full IdiotBox version
     return @{@"title" : @"name",
              @"episodeID" : @"identifier",
              @"airedDate" : @"airDate",
@@ -35,6 +42,7 @@
              @"overview" : @"synopsis",
              @"imageURL" : @"thumbURL",
              @"rating" : @"rating"};
+	 */
 }
 
 -(void)updateLocalObjectWithRemoteObject:(NSObject <PKRemoteDataModelObjectProtocol> *)remoteObject {
