@@ -13,6 +13,7 @@ NSString * const kEpisodeRemoteIDKey = @"episodeID";
 NSString * const kEpisodeNumberKey = @"episodeNumber";
 NSString * const kEpisodeSeasonNumber = @"seasonNumber";
 NSString * const kEpisodeTitleKey = @"title";
+NSString * const kEpisodeSeasonIDKey = @"seasonID";
 
 @interface PKRemoteEpisode()
 
@@ -21,6 +22,7 @@ NSString * const kEpisodeTitleKey = @"title";
 @property (strong, nonatomic) NSDate *airedDate;
 @property (strong, nonatomic) NSNumber *episodeNumber;
 @property (strong, nonatomic) NSNumber *seasonNumber;
+@property (copy, nonatomic) NSString *seasonID;
 
 @end
 
@@ -37,7 +39,8 @@ NSString * const kEpisodeTitleKey = @"title";
 			 kEpisodeNumberKey: self.episodeNumber,
 			 kEpisodeRemoteIDKey: self.episodeID,
 			 kEpisodeSeasonNumber: self.seasonNumber,
-			 kEpisodeTitleKey: self.title};
+			 kEpisodeTitleKey: self.title,
+			 kEpisodeSeasonIDKey: self.seasonID};
 }
 
 + (id<PKRemoteDataModelObjectProtocol>)deserialize:(NSDictionary *)dictionary error:(NSError *__autoreleasing *)error {
@@ -47,6 +50,7 @@ NSString * const kEpisodeTitleKey = @"title";
 	remoteEpisode.airedDate = dictionary[kEpisodeAirDateKey];
 	remoteEpisode.episodeNumber = dictionary[kEpisodeNumberKey];
 	remoteEpisode.seasonNumber = dictionary[kEpisodeSeasonNumber];
+	remoteEpisode.seasonID = dictionary[kEpisodeSeasonIDKey];
 	return remoteEpisode;
 }
 

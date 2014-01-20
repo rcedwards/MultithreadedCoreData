@@ -22,10 +22,6 @@
 #pragma mark - Instance Helpers
 
 - (void)updateLocalObjectWithRemoteObject:(NSObject<PKRemoteDataModelObjectProtocol> *)remoteObject {
-    NSDictionary *dictionary = [remoteObject serialize];
-    NSData *remoteObjectData = [NSKeyedArchiver archivedDataWithRootObject:dictionary];
-    self.remoteObject = remoteObjectData;
-
     NSArray *propertyKeys = [[[self class] propertyKeyMappingDictionary] allKeys];
     NSDictionary *updateDictionary = [remoteObject dictionaryWithValuesForKeys:propertyKeys];
 	[self setValuesForKeysWithDictionary:updateDictionary];

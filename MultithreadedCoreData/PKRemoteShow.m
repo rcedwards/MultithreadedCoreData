@@ -8,6 +8,8 @@
 
 #import "PKRemoteShow.h"
 
+#import "PKRemoteEpisode.h"
+
 NSString * const kShowIDKey = @"showID";
 NSString * const kShowNameKey = @"name";
 NSString * const kShowEpisodesKey = @"episodes";
@@ -38,7 +40,12 @@ NSString * const kShowEpisodesKey = @"episodes";
 	PKRemoteShow *remoteShow = [[PKRemoteShow alloc] init];
 	remoteShow.showID = dictionary[kShowIDKey];
 	remoteShow.name = dictionary[kShowNameKey];
-	remoteShow.episodes = dictionary[kShowEpisodesKey];
+	__block NSMutableArray *episodes = [[NSMutableArray alloc] init];
+	[dictionary[kShowEpisodesKey] enumerateObjectsUsingBlock:^(NSDictionary *remoteEpisodeDictionary, NSUInteger idx, BOOL *stop) {
+		PKRemoteEpisode *remoteEpisode = [PKRemoteEpisode deserialize:remoteEpisodeDictionary error:nil];
+		[episodes addObject:remoteEpisode];
+	}];
+	remoteShow.episodes = episodes;
 	return remoteShow;
 }
 

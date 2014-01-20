@@ -13,6 +13,7 @@ extern NSString * const kEpisodeRemoteIDKey;
 extern NSString * const kEpisodeNumberKey;
 extern NSString * const kEpisodeSeasonNumber;
 extern NSString * const kEpisodeTitleKey;
+extern NSString * const kEpisodeSeasonIDKey;
 
 @interface PKRemoteEpisode : NSObject <PKRemoteDataModelObjectProtocol>
 

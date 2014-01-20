@@ -138,7 +138,8 @@
 	 Simplified version for example
 	 */
 	return @{@"showID" : @"identifier",
-			 @"name" : @"name"};
+			 @"name" : @"name",
+			 @"episodes" : @"episodes"};
 	
 	/* Full IdiotBox Version
     return @{@"airDay" : @"airDay",

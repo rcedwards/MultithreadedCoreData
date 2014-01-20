@@ -21,6 +21,7 @@
 		E462C8F5188DC1B10056C76E /* Season.m in Sources */ = {isa = PBXBuildFile; fileRef = E462C8F4188DC1B10056C76E /* Season.m */; };
 		E462C8F8188DC47B0056C76E /* NSManagedObjectContext+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E462C8F7188DC47B0056C76E /* NSManagedObjectContext+Helpers.m */; };
 		E462C8FB188DCC7C0056C76E /* PKRemoteEpisode.m in Sources */ = {isa = PBXBuildFile; fileRef = E462C8FA188DCC7C0056C76E /* PKRemoteEpisode.m */; };
+		E462C8FE188DD7350056C76E /* PKEpisodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E462C8FD188DD7350056C76E /* PKEpisodesViewController.m */; };
 		E4E75B31188DA942006E51CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E75B30188DA942006E51CF /* Foundation.framework */; };
 		E4E75B33188DA942006E51CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E75B32188DA942006E51CF /* CoreGraphics.framework */; };
 		E4E75B35188DA942006E51CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E75B34188DA942006E51CF /* UIKit.framework */; };
@@ -60,6 +61,8 @@
 		E462C8F7188DC47B0056C76E /* NSManagedObjectContext+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Helpers.m"; sourceTree = "<group>"; };
 		E462C8F9188DCC7C0056C76E /* PKRemoteEpisode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKRemoteEpisode.h; sourceTree = "<group>"; };
 		E462C8FA188DCC7C0056C76E /* PKRemoteEpisode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKRemoteEpisode.m; sourceTree = "<group>"; };
+		E462C8FC188DD7350056C76E /* PKEpisodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKEpisodesViewController.h; sourceTree = "<group>"; };
+		E462C8FD188DD7350056C76E /* PKEpisodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKEpisodesViewController.m; sourceTree = "<group>"; };
 		E4E75B2D188DA942006E51CF /* MultithreadedCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultithreadedCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E75B30188DA942006E51CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4E75B32188DA942006E51CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,8 @@
 				E462C8C4188DAACA0056C76E /* PKManagedTableViewController.m */,
 				E462C8C7188DAD230056C76E /* PKShowsViewController.h */,
 				E462C8C8188DAD230056C76E /* PKShowsViewController.m */,
+				E462C8FC188DD7350056C76E /* PKEpisodesViewController.h */,
+				E462C8FD188DD7350056C76E /* PKEpisodesViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				E462C8FB188DCC7C0056C76E /* PKRemoteEpisode.m in Sources */,
 				E462C8EF188DC1B00056C76E /* Episode.m in Sources */,
 				E462C8B9188DAA0A0056C76E /* PKCoreDataStackCoordinator.m in Sources */,
+				E462C8FE188DD7350056C76E /* PKEpisodesViewController.m in Sources */,
 				E462C8EC188DB7410056C76E /* PKRemoteShow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -56,28 +56,32 @@
 																	 kEpisodeNumberKey : @(1),
 																	 kEpisodeRemoteIDKey : @"4079947",
 																	 kEpisodeSeasonNumber : @(1),
-																	 kEpisodeTitleKey : @"Pilot"
+																	 kEpisodeTitleKey : @"Pilot",
+																	 kEpisodeSeasonIDKey : @"570228"
 																	 },
 																 @{
 																	 kEpisodeAirDateKey : [[self class] dateFromString:@"2011-10-09"],
 																	 kEpisodeNumberKey : @(2),
 																	 kEpisodeRemoteIDKey : @"4175251",
 																	 kEpisodeSeasonNumber : @(1),
-																	 kEpisodeTitleKey : @"Grace"
+																	 kEpisodeTitleKey : @"Grace",
+																	 kEpisodeSeasonIDKey : @"570228"
 																	 },
 																 @{
 																	 kEpisodeAirDateKey : [[self class] dateFromString:@"2011-10-16"],
 																	 kEpisodeNumberKey : @(3),
 																	 kEpisodeRemoteIDKey : @"4175252",
 																	 kEpisodeSeasonNumber : @(1),
-																	 kEpisodeTitleKey : @"Clean Skin"
+																	 kEpisodeTitleKey : @"Clean Skin",
+																	 kEpisodeSeasonIDKey : @"570228"
 																	 },
 																 @{
 																	 kEpisodeAirDateKey : [[self class] dateFromString:@"2012-09-30"],
 																	 kEpisodeNumberKey : @(1),
 																	 kEpisodeRemoteIDKey : @"4303747",
 																	 kEpisodeSeasonNumber : @(2),
-																	 kEpisodeTitleKey : @"The Smile"
+																	 kEpisodeTitleKey : @"The Smile",
+																	 kEpisodeSeasonIDKey : @"463982"
 																	 }]
 											 };
 		PKRemoteShow *homelandShow = [PKRemoteShow deserialize:homeLandDictionary error:nil];
