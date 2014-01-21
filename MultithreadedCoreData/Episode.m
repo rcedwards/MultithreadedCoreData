@@ -49,7 +49,7 @@
 	/** Have to handle Season obj here since we need two attributes */
     Season *persistedSeason = nil;
     NSPredicate *currentSeasonPredicate = [NSPredicate predicateWithFormat:@"identifier==%@",
-                                           [remoteObject remoteIdentifier]];
+                                           [remoteObject valueForKey:@"seasonID"]]; 
     NSOrderedSet *matchingSeasons = [NSOrderedSet orderedSetWithSet:[self.show.seasons filteredSetUsingPredicate:currentSeasonPredicate]];
     if ([matchingSeasons count] > 0) {
         persistedSeason = matchingSeasons[0];
