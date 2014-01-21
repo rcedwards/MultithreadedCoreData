@@ -84,8 +84,73 @@
 																	 kEpisodeSeasonIDKey : @"463982"
 																	 }]
 											 };
-		PKRemoteShow *homelandShow = [PKRemoteShow deserialize:homeLandDictionary error:nil];
-		__unused Show *persistedShow = [Show insertOrUpdateShowWithRemoteShow:homelandShow inMOC:self.context];
+        
+        NSDictionary *lostDictionary = @{kShowIDKey: @"73739",
+                                         kShowNameKey: @"Lost",
+                                         kShowEpisodesKey: @[@{
+                                                                   kEpisodeAirDateKey : [[self class] dateFromString:@"2004-09-22"],
+                                                                   kEpisodeSeasonNumber : @(1),
+                                                                   kEpisodeSeasonIDKey : @"6345",
+                                                                   kEpisodeRemoteIDKey : @"127131",
+                                                                   kEpisodeTitleKey : @"Pilot (1)",
+                                                                   kEpisodeNumberKey : @(1)
+                                                                   },
+                                                               @{
+                                                                   kEpisodeAirDateKey : [[self class] dateFromString:@"2004-09-29"],
+                                                                   kEpisodeSeasonNumber : @(1),
+                                                                   kEpisodeSeasonIDKey : @"6345",
+                                                                   kEpisodeRemoteIDKey : @"127132",
+                                                                   kEpisodeTitleKey : @"Pilot (2)",
+                                                                   kEpisodeNumberKey : @(2)
+                                                                   },
+                                                               @{
+                                                                   kEpisodeAirDateKey : [[self class] dateFromString:@"2004-10-06"],
+                                                                   kEpisodeSeasonNumber : @(1),
+                                                                   kEpisodeSeasonIDKey : @"6345",
+                                                                   kEpisodeRemoteIDKey : @"127133",
+                                                                   kEpisodeTitleKey : @"Tabula Rasa",
+                                                                   kEpisodeNumberKey : @(3)
+                                                                   },
+                                                               @{
+                                                                   kEpisodeAirDateKey : [[self class] dateFromString:@"2005-09-21"],
+                                                                   kEpisodeSeasonNumber : @(2),
+                                                                   kEpisodeSeasonIDKey : @"6346",
+                                                                   kEpisodeRemoteIDKey : @"302656",
+                                                                   kEpisodeTitleKey : @"Man of Science, Man of Faith",
+                                                                   kEpisodeNumberKey : @(1)
+                                                                   },
+                                                               @{
+                                                                   kEpisodeAirDateKey : [[self class] dateFromString:@"2005-09-28"],
+                                                                   kEpisodeSeasonNumber : @(2),
+                                                                   kEpisodeSeasonIDKey : @"6346",
+                                                                   kEpisodeRemoteIDKey : @"302657",
+                                                                   kEpisodeTitleKey : @"Adrift",
+                                                                   kEpisodeNumberKey : @(2)
+                                                                   },
+                                                               @{
+                                                                   kEpisodeAirDateKey : [[self class] dateFromString:@"2006-10-04"],
+                                                                   kEpisodeSeasonNumber : @(3),
+                                                                   kEpisodeSeasonIDKey : @"16270",
+                                                                   kEpisodeRemoteIDKey : @"307435",
+                                                                   kEpisodeTitleKey : @"A Tale of Two Cities",
+                                                                   kEpisodeNumberKey : @(1)
+                                                                   },
+                                                               @{
+                                                                   kEpisodeAirDateKey : [[self class] dateFromString:@"2006-10-11"],
+                                                                   kEpisodeSeasonNumber : @(3),
+                                                                   kEpisodeSeasonIDKey : @"16270",
+                                                                   kEpisodeRemoteIDKey : @"308048",
+                                                                   kEpisodeTitleKey : @"The Glass Ballerina",
+                                                                   kEpisodeNumberKey : @(2)
+                                                                   }]
+											 };
+		
+        PKRemoteShow *homelandRemoteShow = [PKRemoteShow deserialize:homeLandDictionary error:nil];
+		__unused Show *homelandPersistedShow = [Show insertOrUpdateShowWithRemoteShow:homelandRemoteShow inMOC:self.context];
+        
+        PKRemoteShow *lostRemoteShow = [PKRemoteShow deserialize:lostDictionary error:nil];
+        __unused Show *lostPersistedShow = [Show insertOrUpdateShowWithRemoteShow:lostRemoteShow inMOC:self.context];
+        
 		[self.context saveAndPropagateToStoreWithCompletion:^(BOOL success, NSError *error) {}];
 	});
 }
