@@ -80,4 +80,9 @@
 	return cell;
 }
 
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [NSString stringWithFormat:@"%@ %d", self.fetchedResultsController.sectionNameKeyPath, section+1];
+}
+
 @end
