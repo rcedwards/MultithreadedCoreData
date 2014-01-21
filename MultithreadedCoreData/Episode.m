@@ -68,9 +68,11 @@
 
 - (void)setValue:(id)value forKey:(NSString *)key {
     if ([key isEqualToString:NSStringFromSelector(@selector(airDate))]) {
-        //Manipulate date to include time.
-        value = [value dateByReplacingTimeWithTime:self.show.airTime];
-        [super setValue:value forKey:key];
+		if (self.show.airTime) {
+			//Manipulate date to include time.
+			value = [value dateByReplacingTimeWithTime:self.show.airTime];
+			[super setValue:value forKey:key];
+		}
     } else {
         [super setValue:value forKey:key];
     }
