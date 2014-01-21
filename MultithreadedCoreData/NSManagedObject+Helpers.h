@@ -11,6 +11,6 @@
 @interface NSManagedObject (Helpers)
 
 + (NSEntityDescription *)entityDescriptionInContext:(NSManagedObjectContext *)moc;
-+ (NSEntityDescription *)createNewObjectInContext:(NSManagedObjectContext *)moc;
++ (id)createNewObjectInContext:(NSManagedObjectContext *)moc;
 
 @end
