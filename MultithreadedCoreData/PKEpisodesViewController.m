@@ -82,7 +82,7 @@
 
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"%@ %d", self.fetchedResultsController.sectionNameKeyPath, section+1];
+    return [NSString stringWithFormat:@"%@ %d", self.fetchedResultsController.sectionNameKeyPath, (int)section+1];
 }
 
 @end
